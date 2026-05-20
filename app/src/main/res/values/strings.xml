@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YourHabitBuddy</string>
+    <string name="track_your_habits">Відстежуй свої звички</string>
+    <string name="habits">Звички</string>
+    <string name="settings">Налаштування</string>
+    <string name="statistics">Статистика</string>
+    <string name="dark_theme">Темна тема</string>
+    <string name="dark_theme_summary">Увімкнути темну тему</string>
+    <string name="about_text">YourHabitBuddy - твій персональний трекер звичок</string>
+    <string name="made_with">Зроблено з любов\'ю для кращої версії себе</string>
+    <string name="add_habit">Додати звичку</string>
+    <string name="habit_name">Назва звички</string>
+    <string name="habit_type">Тип звички</string>
+    <string name="good_habit">Корисна</string>
+    <string name="bad_habit">Шкідлива</string>
+    <string name="cancel">Скасувати</string>
+    <string name="add">Додати</string>
+    <string name="delete">Видалити</string>
+    <string name="close">Закрити</string>
+    <string name="empty_habits">Немає звичок. Натисніть + щоб додати</string>
+    <string name="total_habits">всього звичок</string>
+    <string name="total_days">всього днів</string>
+    <string name="navigation_drawer_open">Відкрити меню</string>
+    <string name="navigation_drawer_close">Закрити меню</string>
+    <string name="habit_added">Звичку додано</string>
+    <string name="habit_deleted">Звичку видалено</string>
+    <string name="dark_theme_enabled">Темна тема увімкнена</string>
+    <string name="light_theme_enabled">Світла тема увімкнена</string>
+    <string name="about">Про додаток</string>
+    <string name="version_name">Версія 1.0.0</string>
+    <string name="language">Мова</string>
+    <string name="choose_language">Виберіть мову</string>
+    <string name="version">Версія</string>
+    <string name="progress">Прогрес</string>
+    <string name="streak">Стрік</string>
+    <string name="completed_days">Виконано днів</string>
+    <string name="weekly_progress">Прогрес за тиждень</string>
+    <string name="select_habit">Виберіть звичку</string>
+    <string name="share">Поділитись</string>
+    <string name="share_info">Додатково</string>
+
+    <plurals name="days">
+        <item quantity="one">день</item>
+        <item quantity="few">дня</item>
+        <item quantity="many">днів</item>
+    </plurals>
+
+    <!-- science facts -->
+    <string name="habit_fact_title">💡 Цікавий факт</string>
+    <string name="habit_fact_1">На формування нової звички в середньому потрібно 66 днів</string>
+    <string name="habit_fact_2">40% наших щоденних дій - це звички, а не свідомі рішення</string>
+    <string name="habit_fact_3">Навіть 2 хвилини нової звички краще, ніж 0</string>
+    <string name="habit_fact_4">Маленькі перемоги кожен день = великий результат за рік</string>
+    <string name="habit_fact_5">Найлегше формувати звички вранці, коли сила волі максимальна</string>
+    <string name="habit_fact_6">Пропустити один день - окей. Два дні поспіль - небезпечно для звички</string>
+    <string name="habit_fact_7">Люди з сильними звичками мають на 50% менше стресу</string>
+    <string name="habit_fact_8">Мозок автоматизує звички, щоб економити енергію</string>
+    <string name="habit_fact_9">21 день - міф, реальний діапазон від 18 до 254 днів</string>
+    <string name="habit_fact_10">Оточення впливає на звички сильніше, ніж сила волі</string>
+    <string name="habit_fact_ok">Круто! 🔥</string>
+
+    <!-- Досягнення -->
+    <string name="achievements">🏆 Досягнення</string>
+    <string name="your_level">Твій рівень</string>
+    <string name="beginner">🌱 Початківець</string>
+    <string name="level_bronze">🥉 Бронзовий трекер</string>
+    <string name="level_silver">🥈 Срібний трекер</string>
+    <string name="level_gold">🥇 Золотий трекер</string>
+    <string name="level_diamond">💎 Діамантовий трекер</string>
+    <string name="level_legend">👑 Легенда</string>
+    <string name="total_tracking_days">Всього днів відстеження</string>
+    <string name="awesome">Супер!</string>
+
+    <!-- Челендж -->
+    <string name="daily_challenge">🎯 Щоденний челендж</string>
+    <string name="complete_challenge">Виконай сьогодні та отримай +10 до мотивації!</string>
+    <string name="will_do">Зроблю! 💪</string>
+    <string name="maybe_later">Може пізніше</string>
+
+    <!-- Календар стріку -->
+    <string name="streak_calendar">📅 Календар стріку</string>
+    <string name="today">Сьогодні</string>
+    <string name="you_are_on_right_track">Ти на правильному шляху!</string>
+    <string name="keep_going">Продовжуй!</string>
+
+    <!-- Календар статистики -->
+    <string name="calendar_title">📅 Календар звичок</string>
+    <string name="no_habits_data">Немає звичок. Додай першу!</string>
+    <string name="active_habits">Активних звичок</string>
+    <string name="habits_list">Список звичок</string>
+    <string name="total_stats">Загальна статистика</string>
+    <string name="total_days_count">Всього днів</string>
+    <string name="longest_habit">Найдовша звичка</string>
+    <string name="record_days">Рекорд</string>
+    <string name="days_abbr">дн.</string>
+    <string name="days_full">днів</string>
+    <string name="share_report">Поділитись</string>
+
+    <!-- Дні тижня -->
+    <string name="monday">Пн</string>
+    <string name="tuesday">Вт</string>
+    <string name="wednesday">Ср</string>
+    <string name="thursday">Чт</string>
+    <string name="friday">Пт</string>
+    <string name="saturday">Сб</string>
+    <string name="sunday">Нд</string>
+
+    <!-- Логін/Реєстрація -->
+    <string name="login">Увійти</string>
+    <string name="register">Зареєструватись</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="forgot_password">Забули пароль?</string>
+    <string name="support_email">support@yourhabbitbuddy.com</string>
+    <string name="fill_all_fields">Заповніть всі поля</string>
+    <string name="password_min_length">Пароль має бути не менше 4 символів</string>
+    <string name="invalid_email">Введіть коректний email (example@domain.com)</string>
+    <string name="user_exists">Користувач з таким email вже існує</string>
+    <string name="invalid_credentials">Невірний email або пароль</string>
+    <string name="registration_success">Реєстрація успішна! Вітаємо!</string>
+    <string name="login_success">Вітаємо, %s!</string>
+    <string name="register_error">Помилка реєстрації</string>
+    <string name="loading">Завантаження...</string>
+    <string name="logout">Вийти</string>
+    <string name="logout_success">👋 Ви вийшли з акаунту</string>
+
+    <!-- Snackbar повідомлення (якщо треба більш детальні) -->
+    <string name="share_thanks">Дякуємо, що ділитесь!</string>
+
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_habits"
+            android:icon="@drawable/ic_habits"
+            android:title="@string/habits" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings" />
+
+    </group>
+
+    <item android:title="@string/share_info">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="@string/share" />
+
+            <item
+                android:id="@+id/nav_calendar"
+                android:icon="@drawable/ic_calendar"
+                android:title="@string/statistics"/>
+
+            <item android:title="@string/keep_going">
+                <menu>
+                    <item
+                        android:id="@+id/nav_achievements"
+                        android:icon="@drawable/ic_trophy"
+                        android:title="@string/achievements" />
+                </menu>
+            </item>
+
+            <item
+                android:id="@+id/nav_challenge"
+                android:icon="@drawable/ic_target"
+                android:title="@string/daily_challenge" />
+
+            <item
+                android:id="@+id/nav_fact"
+                android:icon="@drawable/ic_fact"
+                android:title="@string/habit_fact_title" />
+        </menu>
+    </item>
+
+</menu>

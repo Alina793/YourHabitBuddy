@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="512dp"
+    android:height="512dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+    <!-- Градієнтний фон -->
+    <path
+        android:fillColor="#1A1A2E"
+        android:pathData="M256,256m-256,0a256,256 0,1 1,512 0a256,256 0,1 1,-512 0"/>
+    <!-- Зовнішнє світіння -->
+    <path
+        android:fillColor="#FF3366"
+        android:fillAlpha="0.2"
+        android:pathData="M256,256m-220,0a220,220 0,1 1,440 0a220,220 0,1 1,-440 0"/>
+    <!-- Тінь серця -->
+    <path
+        android:fillColor="#000000"
+        android:fillAlpha="0.4"
+        android:pathData="M256,335 C256,335 208,290 186,270 C170,254 164,234 176,220 C188,206 206,206 222,222 L256,258 L290,222 C306,206 324,206 336,220 C348,234 342,254 326,270 C304,290 256,335 256,335 Z"/>
+    <!-- Основне серце -->
+    <path
+        android:fillColor="#FF3366"
+        android:pathData="M256,330 C256,330 210,285 190,265 C175,250 170,230 182,215 C194,200 212,200 226,215 L256,245 L286,215 C300,200 318,200 330,215 C342,230 337,250 322,265 C302,285 256,330 256,330 Z"/>
+    <!-- Градієнт на серці (верх) -->
+    <path
+        android:fillColor="#FF6699"
+        android:fillAlpha="0.6"
+        android:pathData="M256,245 L226,215 C212,200 194,200 182,215 C170,230 175,250 190,265 C198,274 210,283 222,291 L256,330 Z"/>
+</vector>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Головні кольори бренду -->
+
+    <!-- Акцентні кольори -->
+    <color name="accent">#F59E0B</color>
+    <color name="accent_dark">#D97706</color>
+    <color name="accent_light">#FBBF24</color>
+
+    <!-- Статусні кольори -->
+
+    <color name="info">#3B82F6</color>
+
+    <!-- Кольори для тексту (ВИПРАВЛЕНО) -->
+    <color name="text_primary">#111827</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_hint">#9CA3AF</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_black">#000000</color>
+
+    <!-- Світла тема -->
+    <color name="background_light">#F9FAFB</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="card_light">#FFFFFF</color>
+    <color name="divider_light">#E5E7EB</color>
+
+    <!-- Темна тема -->
+    <color name="background_dark">#111827</color>
+    <color name="surface_dark">#1F2937</color>
+    <color name="card_dark">#374151</color>
+    <color name="divider_dark">#374151</color>
+
+    <!-- Градієнти -->
+    <color name="gradient_start">#7C3AED</color>
+    <color name="gradient_end">#F59E0B</color>
+
+    <color name="primary">#7C3AED</color>
+    <color name="primary_dark">#6D28D9</color>
+    <color name="primary_light">#8B5CF6</color>
+    <color name="success">#10B981</color>
+    <color name="warning">#F59E0B</color>
+    <color name="error">#EF4444</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="ic_launcher_background">#7C3AED</color>
+</resources>

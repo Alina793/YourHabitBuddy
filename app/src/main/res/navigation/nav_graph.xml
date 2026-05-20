@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_habits">
+
+    <fragment
+        android:id="@+id/nav_habits"
+        android:name="com.app.yourhabbitbuddy.ui.habits.HabitsFragment"
+        android:label="@string/habits" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.app.yourhabbitbuddy.ui.settings.SettingsFragment"
+        android:label="@string/settings" />
+
+</navigation>
