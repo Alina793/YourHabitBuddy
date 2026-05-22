@@ -15,10 +15,10 @@ public class HabitsViewModel extends AndroidViewModel {
 
     private HabitRepository habitRepository;
     private UserRepository userRepository;
-    private LiveData<List<Habit>> allHabits;
+    private MutableLiveData<List<Habit>> allHabits = new MutableLiveData<>();
     private MutableLiveData<Stats> stats = new MutableLiveData<>(new Stats());
     private MutableLiveData<Integer> totalDays = new MutableLiveData<>(0);
-    private long currentUserId;
+    private long currentUserId = -1;
 
     public static class Stats {
         public int todayCount = 0;
@@ -37,8 +37,7 @@ public class HabitsViewModel extends AndroidViewModel {
                 if (user != null) {
                     currentUserId = user.getId();
                     habitRepository = new HabitRepository(app, currentUserId);
-                    allHabits = habitRepository.getAllHabits();
-                    loadStats();
+                    refreshAllData(); // Оновлюємо всі дані
                 }
             }
         });
@@ -56,6 +55,52 @@ public class HabitsViewModel extends AndroidViewModel {
         return totalDays;
     }
 
+    // Оновлення всіх даних з БД
+    private void refreshAllData() {
+        if (habitRepository == null) return;
+
+        new Thread(() -> {
+            // Оновлюємо список звичок
+            List<Habit> habits = habitRepository.getHabitsSync();
+            allHabits.postValue(habits);
+
+            // Оновлюємо статистику
+            if (habits != null) {
+                long today = getTodayStart();
+                long tomorrow = today + 86400000;
+                int todayCount = habitRepository.getTodayCompletedCount(today, tomorrow);
+
+                int totalDaysSum = 0;
+                int bestStreak = 0;
+
+                for (Habit h : habits) {
+                    long days = (System.currentTimeMillis() - h.getCreatedAt()) / (24 * 60 * 60 * 1000);
+                    totalDaysSum += days;
+
+                    // Розрахунок стріку для кожної звички
+                    List<Long> dates = habitRepository.getCompletedDates(h.getId());
+                    int streak = 0;
+                    long expected = getTodayStart();
+                    for (long date : dates) {
+                        if (date >= expected) {
+                            streak++;
+                            expected -= 86400000;
+                        } else break;
+                    }
+                    if (streak > bestStreak) bestStreak = streak;
+                }
+
+                Stats s = new Stats();
+                s.todayCount = todayCount;
+                s.totalCount = habits.size();
+                s.bestStreak = bestStreak;
+
+                stats.postValue(s);
+                totalDays.postValue(totalDaysSum);
+            }
+        }).start();
+    }
+
     public void addHabit(String name, String type) {
         if (habitRepository == null) return;
 
@@ -64,70 +109,23 @@ public class HabitsViewModel extends AndroidViewModel {
             habit.setName(name);
             habit.setType(type);
             habit.setUserId(currentUserId);
+            habit.setCreatedAt(System.currentTimeMillis());
             habitRepository.insertHabit(habit);
-            loadStats();
+            refreshAllData(); // Оновлюємо дані після додавання
         }).start();
     }
 
     public void deleteHabit(Habit habit) {
         if (habitRepository == null) return;
         habitRepository.deleteHabit(habit);
-        loadStats();
+        refreshAllData(); // Оновлюємо дані після видалення
     }
 
     public void toggleHabit(Habit habit, boolean completed) {
         if (habitRepository == null) return;
         long today = getTodayStart();
         habitRepository.toggleHabit(habit.getId(), today, completed);
-        loadStats();
-    }
-
-    private void loadStats() {
-        if (habitRepository == null) return;
-
-        new Thread(() -> {
-            List<Habit> habits = habitRepository.getHabitsSync();
-            if (habits == null) {
-                stats.postValue(new Stats());
-                totalDays.postValue(0);
-                return;
-            }
-
-            long today = getTodayStart();
-            long tomorrow = today + 86400000;
-            int todayCount = habitRepository.getTodayCompletedCount(today, tomorrow);
-
-            int totalDaysSum = 0;
-            for (Habit h : habits) {
-                long days = (System.currentTimeMillis() - h.getCreatedAt()) / (24 * 60 * 60 * 1000);
-                totalDaysSum += days;
-            }
-
-            Stats s = new Stats();
-            s.todayCount = todayCount;
-            s.totalCount = habits.size();
-            s.bestStreak = calculateBestStreak(habits);
-
-            stats.postValue(s);
-            totalDays.postValue(totalDaysSum);
-        }).start();
-    }
-
-    private int calculateBestStreak(List<Habit> habits) {
-        int max = 0;
-        for (Habit h : habits) {
-            List<Long> dates = habitRepository.getCompletedDates(h.getId());
-            int streak = 0;
-            long expected = getTodayStart();
-            for (long date : dates) {
-                if (date >= expected) {
-                    streak++;
-                    expected -= 86400000;
-                } else break;
-            }
-            if (streak > max) max = streak;
-        }
-        return max;
+        refreshAllData(); // Оновлюємо дані після зміни
     }
 
     private long getTodayStart() {

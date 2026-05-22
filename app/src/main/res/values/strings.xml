@@ -18,6 +18,7 @@
     <string name="add">Додати</string>
     <string name="delete">Видалити</string>
     <string name="close">Закрити</string>
+    <string name="error">Помилка</string>
     <string name="empty_habits">Немає звичок. Натисніть + щоб додати</string>
     <string name="total_habits">всього звичок</string>
     <string name="total_days">всього днів</string>
@@ -47,7 +48,7 @@
     </plurals>
 
     <!-- science facts -->
-    <string name="habit_fact_title">💡 Цікавий факт</string>
+    <string name="habit_fact_title">Цікавий факт</string>
     <string name="habit_fact_1">На формування нової звички в середньому потрібно 66 днів</string>
     <string name="habit_fact_2">40% наших щоденних дій - це звички, а не свідомі рішення</string>
     <string name="habit_fact_3">Навіть 2 хвилини нової звички краще, ніж 0</string>
@@ -73,7 +74,7 @@
     <string name="awesome">Супер!</string>
 
     <!-- Челендж -->
-    <string name="daily_challenge">🎯 Щоденний челендж</string>
+    <string name="daily_challenge">Щоденний челендж</string>
     <string name="complete_challenge">Виконай сьогодні та отримай +10 до мотивації!</string>
     <string name="will_do">Зроблю! 💪</string>
     <string name="maybe_later">Може пізніше</string>
@@ -127,5 +128,31 @@
 
     <!-- Snackbar повідомлення (якщо треба більш детальні) -->
     <string name="share_thanks">Дякуємо, що ділитесь!</string>
+
+    <!-- Карта спортивних майданчиків -->
+    <string name="sports_map">Спорт майданчики</string>
+    <string name="searching_venues">Пошук майданчиків...</string>
+    <string name="no_venues_found">Поруч не знайдено спортивних майданчиків</string>
+    <string name="venues_found">Знайдено майданчиків</string>
+    <string name="distance">Відстань</string>
+    <string name="address">Адреса</string>
+    <string name="opening_hours">Години роботи</string>
+    <string name="free">Безкоштовно</string>
+    <string name="build_route">Побудувати маршрут</string>
+    <string name="location_permission_needed">Дозвіл на геолокацію потрібен для пошуку поруч</string>
+    <string name="select_city">Виберіть місто</string>
+    <string name="kyiv">Київ</string>
+    <string name="lviv">Львів</string>
+    <string name="odesa">Одеса</string>
+    <string name="kharkiv">Харків</string>
+    <string name="dnipro">Дніпро</string>
+    <string name="sports_centre">Спортивний центр</string>
+    <string name="stadium">Стадіон</string>
+    <string name="fitness_centre">Фітнес центр</string>
+    <string name="swimming_pool">Басейн</string>
+    <string name="gym">Тренажерний зал</string>
+    <string name="basketball_court">Баскетбольний майданчик</string>
+    <string name="football_pitch">Футбольне поле</string>
+    <string name="tennis_court">Тенісний корт</string>
 
 </resources>

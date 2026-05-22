@@ -18,6 +18,7 @@
     <string name="add">Add</string>
     <string name="delete">Delete</string>
     <string name="close">Close</string>
+    <string name="error">Error</string>
     <string name="empty_habits">No habits. Tap + to add</string>
     <string name="total_habits">total habits</string>
     <string name="total_days">total days</string>
@@ -46,7 +47,7 @@
     </plurals>
 
     <!--  science facts -->
-    <string name="habit_fact_title">💡 Interesting Fact</string>
+    <string name="habit_fact_title">Interesting Fact</string>
     <string name="habit_fact_1">It takes an average of 66 days to form a new habit</string>
     <string name="habit_fact_2">40% of our daily actions are habits, not conscious decisions</string>
     <string name="habit_fact_3">Even 2 minutes of a new habit is better than 0</string>
@@ -72,7 +73,7 @@
     <string name="awesome">Awesome!</string>
 
     <!-- Challenge -->
-    <string name="daily_challenge">🎯 Daily challenge</string>
+    <string name="daily_challenge">Daily challenge</string>
     <string name="complete_challenge">Complete today and get +10 motivation!</string>
     <string name="will_do">Will do! 💪</string>
     <string name="maybe_later">Maybe later</string>
@@ -126,4 +127,30 @@
 
     <!-- Snackbar messages -->
     <string name="share_thanks">Thank you for sharing!</string>
+
+    <!-- Sports map -->
+    <string name="sports_map">Sports venues</string>
+    <string name="searching_venues">Searching venues...</string>
+    <string name="no_venues_found">No sports venues found nearby</string>
+    <string name="venues_found">venues found</string>
+    <string name="distance">Distance</string>
+    <string name="address">Address</string>
+    <string name="opening_hours">Opening hours</string>
+    <string name="free">Free</string>
+    <string name="build_route">Build route</string>
+    <string name="location_permission_needed">Location permission needed for nearby search</string>
+    <string name="select_city">Select city</string>
+    <string name="kyiv">Kyiv</string>
+    <string name="lviv">Lviv</string>
+    <string name="odesa">Odesa</string>
+    <string name="kharkiv">Kharkiv</string>
+    <string name="dnipro">Dnipro</string>
+    <string name="sports_centre">Sports centre</string>
+    <string name="stadium">Stadium</string>
+    <string name="fitness_centre">Fitness centre</string>
+    <string name="swimming_pool">Swimming pool</string>
+    <string name="gym">Gym</string>
+    <string name="basketball_court">Basketball court</string>
+    <string name="football_pitch">Football pitch</string>
+    <string name="tennis_court">Tennis court</string>
 </resources>

@@ -48,4 +48,9 @@
         </menu>
     </item>
 
+    <item
+        android:id="@+id/nav_sports_map"
+        android:icon="@drawable/ic_gym"
+        android:title="@string/sports_map" />
+
 </menu>

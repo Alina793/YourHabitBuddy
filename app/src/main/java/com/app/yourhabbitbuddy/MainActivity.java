@@ -1,6 +1,5 @@
 package com.app.yourhabbitbuddy;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -25,6 +24,7 @@ import com.app.yourhabbitbuddy.data.Habit;
 import com.app.yourhabbitbuddy.data.User;
 import com.app.yourhabbitbuddy.repository.HabitRepository;
 import com.app.yourhabbitbuddy.repository.UserRepository;
+import com.app.yourhabbitbuddy.ui.maps.SportsMapActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.app.yourhabbitbuddy.R;
 
@@ -52,16 +52,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         sharedPreferences = getSharedPreferences("app_settings", MODE_PRIVATE);
         userRepository = new UserRepository(this);
 
-        // Отримуємо поточного користувача асинхронно
         userRepository.getCurrentUser(new UserRepository.GetUserCallback() {
             @Override
             public void onResult(User user) {
                 if (user != null) {
                     currentUserId = user.getId();
-                    // Створюємо репозиторій з userId
                     habitRepository = new HabitRepository(MainActivity.this, currentUserId);
-
-                    // Оновлюємо UI після отримання даних
                     runOnUiThread(() -> {
                         updateHeaderWithUserData(user);
                         updateHeaderStats();
@@ -206,6 +202,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             showRandomHabitFact();
         } else if (id == R.id.nav_calendar) {
             showSimpleStats();
+        } else if (id == R.id.nav_sports_map) {
+            startActivity(new Intent(this, SportsMapActivity.class));
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -215,8 +213,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void shareApp() {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, "Спробуй YourHabitBuddy - крутий трекер звичок!\n\nСкачай за посиланням: https://play.google.com/store/apps/details?id=" + getPackageName());
-        startActivity(Intent.createChooser(shareIntent, "Поділитись"));
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_thanks) + "\n\n" + getString(R.string.app_name));
+        startActivity(Intent.createChooser(shareIntent, getString(R.string.share)));
     }
 
     private void showRandomHabitFact() {
@@ -261,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int index = random.nextInt(challenges.length);
         String challenge = lang.equals("uk") ? challenges[index][0] : challenges[index][1];
 
-        new AlertDialog.Builder(this)
+        new androidx.appcompat.app.AlertDialog.Builder(this)
                 .setTitle(getString(R.string.daily_challenge))
                 .setMessage(challenge + "\n\n✨ " + getString(R.string.complete_challenge))
                 .setPositiveButton(getString(R.string.will_do), null)
@@ -277,7 +275,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             runOnUiThread(() -> {
                 if (habits == null || habits.isEmpty()) {
-                    new AlertDialog.Builder(MainActivity.this)
+                    new androidx.appcompat.app.AlertDialog.Builder(MainActivity.this)
                             .setTitle(getString(R.string.calendar_title))
                             .setMessage(getString(R.string.no_habits_data))
                             .setPositiveButton("OK", null)
@@ -291,18 +289,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 String bestHabit = "";
 
                 StringBuilder message = new StringBuilder();
-
                 message.append("🎯 ").append(getString(R.string.active_habits)).append(": ").append(activeHabits).append("\n\n");
                 message.append("📋 ").append(getString(R.string.habits_list)).append("\n\n");
 
                 for (Habit habit : habits) {
                     long days = (System.currentTimeMillis() - habit.getCreatedAt()) / (24 * 60 * 60 * 1000);
                     totalDays += days;
-
-                    String emoji = habit.getType().equals("good") ? "✅" : "⚠️";
+                    String emoji = habit.getType().equals("good") ? "" : "";
                     message.append("   ").append(emoji).append(" ").append(habit.getName())
                             .append(" — ").append(days).append(" ").append(getString(R.string.days_abbr)).append("\n");
-
                     if (days > bestStreak) {
                         bestStreak = (int) days;
                         bestHabit = habit.getName();
@@ -310,11 +305,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
 
                 message.append("\n📈 ").append(getString(R.string.total_stats)).append("\n\n");
-                message.append("   📅 ").append(getString(R.string.total_days_count)).append(": ").append(totalDays).append("\n");
-                message.append("   🏆 ").append(getString(R.string.longest_habit)).append(": ").append(bestHabit).append("\n");
-                message.append("   🔥 ").append(getString(R.string.record_days)).append(": ").append(bestStreak).append(" ").append(getString(R.string.days_full));
+                message.append("     ").append(getString(R.string.total_days_count)).append(": ").append(totalDays).append("\n");
+                message.append("     ").append(getString(R.string.longest_habit)).append(": ").append(bestHabit).append("\n");
+                message.append("     ").append(getString(R.string.record_days)).append(": ").append(bestStreak).append(" ").append(getString(R.string.days_full));
 
-                new AlertDialog.Builder(MainActivity.this)
+                new androidx.appcompat.app.AlertDialog.Builder(MainActivity.this)
                         .setTitle(getString(R.string.calendar_title))
                         .setMessage(message.toString())
                         .setPositiveButton(getString(R.string.close), null)
@@ -332,9 +327,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             runOnUiThread(() -> {
                 if (habits == null || habits.isEmpty()) {
-                    new AlertDialog.Builder(this)
+                    new androidx.appcompat.app.AlertDialog.Builder(this)
                             .setTitle(getString(R.string.achievements))
-                            .setMessage("Немає звичок для розрахунку досягнень")
+                            .setMessage(getString(R.string.no_habits_data))
                             .setPositiveButton("OK", null)
                             .show();
                     return;
@@ -369,7 +364,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     emoji = "🌱";
                 }
 
-                new AlertDialog.Builder(this)
+                new androidx.appcompat.app.AlertDialog.Builder(this)
                         .setTitle(getString(R.string.achievements))
                         .setMessage(emoji + " " + level + "\n\n📊 " + getString(R.string.total_tracking_days) + ": " + totalDays)
                         .setPositiveButton(getString(R.string.awesome), null)
