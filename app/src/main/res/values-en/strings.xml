@@ -85,7 +85,7 @@
     <string name="keep_going">Keep going!</string>
 
     <!-- Calendar stats -->
-    <string name="calendar_title">📅 Habits calendar</string>
+    <string name="calendar_title">Habits calendar</string>
     <string name="no_habits_data">No habits. Add your first!</string>
     <string name="active_habits">Active habits</string>
     <string name="habits_list">Habits list</string>
@@ -153,4 +153,29 @@
     <string name="basketball_court">Basketball court</string>
     <string name="football_pitch">Football pitch</string>
     <string name="tennis_court">Tennis court</string>
+
+    <!-- Notifications -->
+    <string name="notifications">Notifications</string>
+    <string name="notifications_summary">Receive notification about habits</string>
+    <string name="reminder_time">Notification time</string>
+    <string name="remind_text_title">Notification - YourHabitBuddy</string>
+    <string name="remind_text_desc">Don\'t forget about your habits today!</string>
+    <string name="notifications_enabled">🔔 Notifications enabled at</string>
+    <string name="notifications_disabled">🔕 Notifications disabled</string>
+    <string name="reminder_time_set">⏰ Reminder time</string>
+    <string name="permission_required">Notification permission required for reminders</string>
+    <string name="ukrainian">Українська</string>
+    <string name="english">English</string>
+
+    <!-- Stats -->
+    <string name="monthly_dynamics">Estimation</string>
+    <string name="progress_over_month">Progress per month</string>
+    <string name="best_day">Most Valuable Day</string>
+    <string name="completed_percent">% completed</string>
+    <string name="stats_tips">100 - fully completed, 0 - a little bit</string>
+
+    <!-- Motivation -->
+    <string name="good_job">Good job!</string>
+    <string name="almost_there">Almost there!</string>
+
 </resources>

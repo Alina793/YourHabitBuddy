@@ -54,4 +54,11 @@ dependencies {
 
     // Для роботи з JSON
     implementation 'com.google.code.gson:gson:2.10.1'
+
+    // scheduler
+    implementation 'androidx.work:work-runtime:2.9.0'
+
+    // graphics 3d
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
 }

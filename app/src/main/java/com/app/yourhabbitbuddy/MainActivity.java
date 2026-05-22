@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -190,6 +191,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_habits) {
             navController.navigate(R.id.nav_habits);
+        } else if (id == R.id.nav_statistics) {
+            navController.navigate(R.id.nav_statistics);
         } else if (id == R.id.nav_settings) {
             navController.navigate(R.id.nav_settings);
         } else if (id == R.id.nav_share) {

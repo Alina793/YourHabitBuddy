@@ -33,11 +33,6 @@
     <string name="language">Мова</string>
     <string name="choose_language">Виберіть мову</string>
     <string name="version">Версія</string>
-    <string name="progress">Прогрес</string>
-    <string name="streak">Стрік</string>
-    <string name="completed_days">Виконано днів</string>
-    <string name="weekly_progress">Прогрес за тиждень</string>
-    <string name="select_habit">Виберіть звичку</string>
     <string name="share">Поділитись</string>
     <string name="share_info">Додатково</string>
 
@@ -86,7 +81,7 @@
     <string name="keep_going">Продовжуй!</string>
 
     <!-- Календар статистики -->
-    <string name="calendar_title">📅 Календар звичок</string>
+    <string name="calendar_title">Календар звичок</string>
     <string name="no_habits_data">Немає звичок. Додай першу!</string>
     <string name="active_habits">Активних звичок</string>
     <string name="habits_list">Список звичок</string>
@@ -154,5 +149,36 @@
     <string name="basketball_court">Баскетбольний майданчик</string>
     <string name="football_pitch">Футбольне поле</string>
     <string name="tennis_court">Тенісний корт</string>
+
+    <!-- Сповіщення -->
+    <string name="notifications">Сповіщення</string>
+    <string name="notifications_summary">Отримувати нагадування про звички</string>
+    <string name="reminder_time">Час нагадування</string>
+    <string name="remind_text_title">Сповіщення - YourHabitBuddy</string>
+    <string name="remind_text_desc">Не забувай про свої звички!</string>
+    <string name="notifications_enabled">🔔 Сповіщення увімкнено на</string>
+    <string name="notifications_disabled">🔕 Сповіщення вимкнено</string>
+    <string name="reminder_time_set">⏰ Час нагадування</string>
+    <string name="permission_required">Дозвіл на сповіщення потрібен для нагадувань</string>
+    <string name="ukrainian">Українська</string>
+    <string name="english">English</string>
+
+
+    <!-- Статистика -->
+    <string name="best_day">Найкращий день</string>
+    <string name="select_habit">Виберіть звичку</string>
+    <string name="progress">Прогрес</string>
+    <string name="streak">Стрік</string>
+    <string name="completed_days">Виконано днів</string>
+    <string name="weekly_progress">Прогрес за тиждень</string>
+    <string name="monthly_dynamics">Динаміка за місяць</string>
+    <string name="progress_over_month">Прогрес за місяць</string>
+    <string name="completed_percent">% виконано</string>
+    <string name="stats_tips">100 - повністю закінчено, 0 - зовсім мало</string>
+
+
+    <!-- Мотивація -->
+    <string name="good_job">Молодець!</string>
+    <string name="almost_there">Ще трохи!</string>
 
 </resources>
